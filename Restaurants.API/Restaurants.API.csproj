@@ -4,6 +4,23 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>0945221f-842a-4323-a3c5-a65c0d49519f</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Restaurants.API.http" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="http-client.env.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Restaurants.API.http" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Restaurants.Application\Restaurants.Application.csproj" />
+  </ItemGroup>
 
 </Project>
