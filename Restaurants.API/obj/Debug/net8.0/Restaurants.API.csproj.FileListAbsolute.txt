@@ -25,3 +25,9 @@ C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.API\obj\Debu
 C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.API\obj\Debug\net8.0\Restaurants.API.genruntimeconfig.cache
 C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.API\obj\Debug\net8.0\ref\Restaurants.API.dll
 C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.API\bin\Debug\net8.0\http-client.env.json
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.API\bin\Debug\net8.0\Restaurants.Application.dll
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.API\bin\Debug\net8.0\Restaurants.Domain.dll
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.API\bin\Debug\net8.0\Restaurants.Application.pdb
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.API\bin\Debug\net8.0\Restaurants.Domain.pdb
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.API\obj\Debug\net8.0\Restaurants.API.csproj.AssemblyReference.cache
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.API\obj\Debug\net8.0\Restaura.7AF479EB.Up2Date

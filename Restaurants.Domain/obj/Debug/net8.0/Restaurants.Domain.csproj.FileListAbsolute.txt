@@ -1,0 +1,12 @@
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.Domain\bin\Debug\net8.0\Restaurants.Domain.deps.json
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.Domain\bin\Debug\net8.0\Restaurants.Domain.dll
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.Domain\bin\Debug\net8.0\Restaurants.Domain.pdb
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.Domain\obj\Debug\net8.0\Restaurants.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.Domain\obj\Debug\net8.0\Restaurants.Domain.AssemblyInfoInputs.cache
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.Domain\obj\Debug\net8.0\Restaurants.Domain.AssemblyInfo.cs
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.Domain\obj\Debug\net8.0\Restaurants.Domain.csproj.CoreCompileInputs.cache
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.Domain\obj\Debug\net8.0\Restaurants.Domain.sourcelink.json
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.Domain\obj\Debug\net8.0\Restaurants.Domain.dll
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.Domain\obj\Debug\net8.0\refint\Restaurants.Domain.dll
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.Domain\obj\Debug\net8.0\Restaurants.Domain.pdb
+C:\Users\bhoyee-pc\Desktop\Projects\e-Shope\Restaurants\Restaurants.Domain\obj\Debug\net8.0\ref\Restaurants.Domain.dll
