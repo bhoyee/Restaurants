@@ -1,5 +1,11 @@
 @HostAddress = https://localhost:7063
 
-GET {{HostAddress}}/weatherforecast
+
+
+GET {{HostAddress}}/api/restaurants
+
+###
+
+GET {{HostAddress}}/api/restaurants/1
 
 ###
