@@ -19,7 +19,8 @@ namespace Restaurants.Application.Dtos
         public string? Street { get; set; }
         public string? PostalCode { get; set; }
 
-        public List<DishDto> Dishes { get; set; } = new();
+        // initialize the Dish property
+        public List<DishDto> Dishes { get; set; } = [];
 
         public static RestaurantDto? FromEntity(Restaurant? restaurant)
         {
@@ -35,6 +36,7 @@ namespace Restaurants.Application.Dtos
                 City = restaurant.Address?.City,
                 Street = restaurant.Address?.Street,
                 PostalCode = restaurant.Address?.PostalCode,
+                Dishes = restaurant.Dishes.Select(DishDto.FromEntity).ToList()
             };
 
         }
