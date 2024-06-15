@@ -10,6 +10,9 @@ namespace Restaurants.Application.Restaurants.Validators
 {
     public class CreateResturantDtoValidator : AbstractValidator<CreateRestaurantDto>
     {
+        //applying some custom rule 
+        private readonly List<string> validCategories = ["Italian", "African", "American", "Indian", "Mexican", "Japanese"];
+        
         public CreateResturantDtoValidator()
         {
             RuleFor(dto => dto.Name)
@@ -18,8 +21,10 @@ namespace Restaurants.Application.Restaurants.Validators
             RuleFor(dto => dto.Description)
                 .NotEmpty().WithMessage("Description is required.");
 
+            // the custom rule apply here
             RuleFor(dto => dto.Category)
-                .NotEmpty().WithMessage("Insert a valid category");
+                .Must(validCategories.Contains)
+                .WithMessage("Invalid category. Please choose from the valid categories");
 
             RuleFor(dto => dto.ContactEmail)
                 .EmailAddress()

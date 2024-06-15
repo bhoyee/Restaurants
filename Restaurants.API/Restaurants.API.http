@@ -16,9 +16,9 @@ Content-Type: application/json
 {
   "Name": "Tasty Bites",
   "Description": "A culinary experience like no other",
-  "Category": "International Cuisine",
+  "Category": "",
   "HasDelivery": true,
-  "ContactEmail": "info@tastybites.com",
+  "ContactEmail": "infotastybites.com",
   "ContactNumber": "555-1234",
   "City": "New York",
   "Street": "123 Main Styreet",
