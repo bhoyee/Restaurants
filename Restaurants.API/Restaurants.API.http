@@ -6,7 +6,7 @@ GET {{HostAddress}}/api/restaurants
 
 ###
 
-GET {{HostAddress}}/api/restaurants/4
+GET {{HostAddress}}/api/restaurants/1
 
 ###
 
@@ -14,15 +14,15 @@ POST {{HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-  "Name": "Tasty Bites",
+  "Name": "Tasty Test1",
   "Description": "A culinary experience like no other",
-  "Category": "",
+  "Category": "African",
   "HasDelivery": true,
-  "ContactEmail": "infotastybites.com",
-  "ContactNumber": "555-1234",
-  "City": "New York",
-  "Street": "123 Main Styreet",
-  "PostalCode": "13-006"
+  "ContactEmail": "test@tastytest.com",
+  "ContactNumber": "655-1234",
+  "City": "New Park",
+  "Street": "423 Main Styreet",
+  "PostalCode": "23-006"
 }
 
 ###

@@ -33,5 +33,12 @@ namespace Restaurants.Infrastructure.Repositories
             return restaurant;
             
         }
+
+        public async Task<Restaurant?> GetRestaurantByDetailsAsync(string name, string contactEmail, string contactNumber)
+        {
+            return await dbContext.Restaurants
+                .Where(r => r.Name == name || r.ContactEmail == contactEmail || r.ContactNumber == contactNumber)
+                .FirstOrDefaultAsync();
+        }
     }
 }
