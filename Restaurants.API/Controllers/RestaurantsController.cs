@@ -5,6 +5,7 @@ using Restaurants.Application.Restaurants.Queries.GetAllRestaurants;
 using Restaurants.Application.Restaurants.Queries.GetRestaurantById;
 using Restaurants.Domain.Repositories.Commands.CreateRestaurant;
 using FluentValidation;
+using Restaurants.Application.Restaurants.Commands.DeleteRestaurant;
 
 
 
@@ -14,6 +15,7 @@ namespace Restaurants.API.Controllers
     [Route("api/restaurants")]
     public class RestaurantsController(IMediator mediator) : ControllerBase
     {
+        //get all restaurants
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -21,6 +23,7 @@ namespace Restaurants.API.Controllers
             return Ok(restaurants);
         }
 
+        //get specific restaurant
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById([FromRoute]int id)
         {
@@ -33,6 +36,22 @@ namespace Restaurants.API.Controllers
             return Ok(restaurant);
         }
 
+        //Delete restaurant
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteRestaurant([FromRoute] int id)
+        {
+            var isDeleted = await mediator.Send(new DeleteRestaurantCommand(id));
+
+            // chk if restaurant deleted
+            if (isDeleted)
+                //return NoContent(); // this return 203 no contentwhich mean it successful deleted
+                return Ok(new { message = "Restaurant successfully deleted" });
+
+
+            return NotFound();
+        }
+
+        //create restaurant
         [HttpPost]
         public async Task<IActionResult> CreateRestaurant([FromBody]CreateRestaurantCommand command)
         {

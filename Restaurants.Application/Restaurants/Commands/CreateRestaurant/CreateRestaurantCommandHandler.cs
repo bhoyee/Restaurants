@@ -7,7 +7,7 @@ using Restaurants.Domain.Entities;
 
 namespace Restaurants.Domain.Repositories.Commands.CreateRestaurant
 {
-    public class CreateRestaurantCommandHander(ILogger<CreateRestaurantCommandHander> logger, 
+    public class CreateRestaurantCommandHandler(ILogger<CreateRestaurantCommandHandler> logger, 
         IMapper mapper,
         IRestaurantsRepository restaurantsRepository) : IRequestHandler<CreateRestaurantCommand, int>
     {
