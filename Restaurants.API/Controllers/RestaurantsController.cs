@@ -6,6 +6,7 @@ using Restaurants.Application.Restaurants.Queries.GetRestaurantById;
 using Restaurants.Domain.Repositories.Commands.CreateRestaurant;
 using FluentValidation;
 using Restaurants.Application.Restaurants.Commands.DeleteRestaurant;
+using Restaurants.Application.Restaurants.Commands.UpdateRestaurant;
 
 
 
@@ -34,6 +35,28 @@ namespace Restaurants.API.Controllers
                 return NotFound();
 
             return Ok(restaurant);
+        }
+
+        //update restaurant
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> UpdateRestaurant(int id, [FromBody] UpdateRestaurantCommand command)
+        {
+            command.Id = id;
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var isUpdated = await mediator.Send(command);
+
+            if (isUpdated)
+            {
+                //return NoContent(); // this return 203 no contentwhich mean it successful deleted
+                return Ok(new { message = "Restaurant successfully Updated" });
+            }
+
+            return NotFound();
         }
 
         //Delete restaurant

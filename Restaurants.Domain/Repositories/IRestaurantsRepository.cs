@@ -13,6 +13,8 @@ namespace Restaurants.Domain.Repositories
         Task<Restaurant?> GetByIdAsync(int id);
         Task<int> Create(Restaurant entity);
         Task Delete(Restaurant entity);
+        Task SaveChanges();
+
 
         // New method to check if a restaurant with specific details already exists
         Task<Restaurant?> GetRestaurantByDetailsAsync(string name, string contactEmail, string contactNumber);

@@ -46,5 +46,10 @@ namespace Restaurants.Infrastructure.Repositories
                 .Where(r => r.Name == name || r.ContactEmail == contactEmail || r.ContactNumber == contactNumber)
                 .FirstOrDefaultAsync();
         }
+
+        public Task SaveChanges()
+            => dbContext.SaveChangesAsync();
+
+
     }
 }
