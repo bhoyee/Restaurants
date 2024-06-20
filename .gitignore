@@ -8,3 +8,5 @@ Restaurants.Domain/bin/
 Restaurants.Domain/obj/
 Restaurants.Infrastructure/bin/
 Restaurants.Infrastructure/obj/
+
+Restaurants.API/Logs/
