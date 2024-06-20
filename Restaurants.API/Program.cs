@@ -16,13 +16,9 @@ builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Host.UseSerilog((context, configuration) =>
     configuration
-        .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-        .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Information)
-        .WriteTo.File("Logs/Restaurant-AP-.log", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit:true)
-
-        .WriteTo.Console(outputTemplate: "[{Timestamp:dd-MM HH:mm:ss} {Level:u3}] |{SourceContext}| {NewLine}{Message:lj}{NewLine}{Exception}")
-
+        .ReadFrom.Configuration(context.Configuration)
  );
+
 
 var app = builder.Build();
 

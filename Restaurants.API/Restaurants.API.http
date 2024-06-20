@@ -14,12 +14,12 @@ POST {{HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-  "Name": "Jadfy Tasty",
+  "Name": "Jadfy Tasty2",
   "Description": "A culinary Naija experience like no other",
   "Category": "African",
   "HasDelivery": true,
-  "ContactEmail": "foody@jadefy.com",
-  "ContactNumber": "5165-1234",
+  "ContactEmail": "2foody@jadefy.com",
+  "ContactNumber": "3165-1234",
   "City": "Lagos",
   "Street": "A423 Main Island",
   "PostalCode": "63-006"
