@@ -1,7 +1,7 @@
 ﻿
 namespace Restaurants.API.Middlewares
 {
-    public class ErrorHandlingMiddle(ILogger<ErrorHandlingMiddle> logger) : IMiddleware
+    public class ErrorHandlingMiddleware(ILogger<ErrorHandlingMiddleware> logger) : IMiddleware
 
     {
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
