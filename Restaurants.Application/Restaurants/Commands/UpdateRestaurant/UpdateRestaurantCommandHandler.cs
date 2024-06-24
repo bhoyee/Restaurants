@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using Restaurants.Domain.Exeception;
 using Restaurants.Domain.Repositories;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,8 @@ namespace Restaurants.Application.Restaurants.Commands.UpdateRestaurant
             if (restaurant == null)
             {
                 logger.LogWarning($"Restaurant with id {request.Id} not found.");
-                return false;
+                throw new NotFoundExeception($"Restaurant with {request.Id} doesn't exist");
+
             }
 
             mapper.Map(request, restaurant);
