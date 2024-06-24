@@ -1,4 +1,8 @@
 ﻿
+using Microsoft.AspNetCore.Http.HttpResults;
+using Restaurants.Application.Restaurants.Commands.CreateRestaurant;
+using Restaurants.Domain.Exeception;
+
 namespace Restaurants.API.Middlewares
 {
     public class ErrorHandlingMiddleware(ILogger<ErrorHandlingMiddleware> logger) : IMiddleware
@@ -9,6 +13,19 @@ namespace Restaurants.API.Middlewares
             try
             {
                 await next.Invoke(context);
+            }
+            catch (RestaurantAlreadyExistsException ex)
+            {
+                context.Response.StatusCode = 409;
+                await context.Response.WriteAsync(ex.Message);
+                logger.LogError(ex.Message);
+            }
+            catch (NotFoundExeception notFound)
+            {
+                context.Response.StatusCode = 404;
+                await context.Response.WriteAsync(notFound.Message);
+
+                logger.LogError(notFound.Message);
             }
             catch (Exception ex)
             {

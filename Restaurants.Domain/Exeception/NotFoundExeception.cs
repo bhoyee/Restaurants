@@ -1,11 +1,9 @@
 ﻿
 namespace Restaurants.Domain.Exeception
 {
-    public class NotFoundExeception : Exception
+    public class NotFoundExeception(string resourceType, string resourceIdentifier) 
+        : Exception($"{resourceType} with id: {resourceIdentifier} doesn't exist")
     {
-        public NotFoundExeception(string message ): base(message)
-        { 
 
-        }
     }
 }

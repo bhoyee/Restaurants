@@ -47,20 +47,11 @@ namespace Restaurants.API.Controllers
         {
             command.Id = id;
 
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            await mediator.Send(command);
 
-            var isUpdated = await mediator.Send(command);
-
-            if (isUpdated)
-            {
-                //return NoContent(); // this return 203 no contentwhich mean it successful deleted
-                return Ok(new { message = "Restaurant successfully Updated" });
-            }
-
-            return NotFound();
+           //return NoContent(); // this return 203 no contentwhich mean it successful deleted
+            return Ok(new { message = "Restaurant successfully Updated" });
+            
         }
 
         //Delete restaurant
@@ -69,15 +60,11 @@ namespace Restaurants.API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteRestaurant([FromRoute] int id)
         {
-            var isDeleted = await mediator.Send(new DeleteRestaurantCommand(id));
+            await mediator.Send(new DeleteRestaurantCommand(id));
 
-            // chk if restaurant deleted
-            if (isDeleted)
-                //return NoContent(); // this return 203 no contentwhich mean it successful deleted
-                return Ok(new { message = "Restaurant successfully deleted" });
+            //return NoContent(); // this return 203 no contentwhich mean it successful deleted
+            return Ok(new { message = "Restaurant successfully deleted" });
 
-
-            return NotFound();
         }
 
         //create restaurant
@@ -85,23 +72,10 @@ namespace Restaurants.API.Controllers
         public async Task<IActionResult> CreateRestaurant([FromBody]CreateRestaurantCommand command)
         {
 
-            try
-            {
+  
                 int id = await mediator.Send(command);
                 return CreatedAtAction(nameof(GetById), new { id }, null);
-            }
-            catch (RestaurantAlreadyExistsException ex)
-            {
-                return Conflict(new { message = ex.Message });
-            }
-            catch (ValidationException ex)
-            {
-                return BadRequest(new { errors = ex.Errors });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { message = ex.Message });
-            }
+ 
         }
 
     }

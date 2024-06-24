@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using Restaurants.Domain.Entities;
 using Restaurants.Domain.Exeception;
 using Restaurants.Domain.Repositories;
 using System;
@@ -23,7 +24,7 @@ namespace Restaurants.Application.Restaurants.Commands.UpdateRestaurant
             if (restaurant == null)
             {
                 logger.LogWarning($"Restaurant with id {request.Id} not found.");
-                throw new NotFoundExeception($"Restaurant with {request.Id} doesn't exist");
+                throw new NotFoundExeception(nameof(Restaurant), request.Id.ToString());
 
             }
 
