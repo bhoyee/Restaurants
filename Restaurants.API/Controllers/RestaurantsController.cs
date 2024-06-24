@@ -29,13 +29,20 @@ namespace Restaurants.API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<RestaurantDto?>> GetById([FromRoute]int id)
         {
-            var restaurant = await mediator.Send(new GetRestaurantByIdQuery(id));
-       
-            // chk if restaurant exist
-            if (restaurant == null)
-                return NotFound();
+            try
+            {
+                var restaurant = await mediator.Send(new GetRestaurantByIdQuery(id));
 
-            return Ok(restaurant);
+                // chk if restaurant exist
+                if (restaurant == null)
+                    return NotFound();
+
+                return Ok(restaurant);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Something went wrong");
+            }
         }
 
         //update restaurant
