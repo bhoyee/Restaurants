@@ -40,6 +40,8 @@ namespace Restaurants.API.Controllers
 
         //update restaurant
         [HttpPatch("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> UpdateRestaurant(int id, [FromBody] UpdateRestaurantCommand command)
         {
             command.Id = id;
@@ -62,6 +64,8 @@ namespace Restaurants.API.Controllers
 
         //Delete restaurant
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteRestaurant([FromRoute] int id)
         {
             var isDeleted = await mediator.Send(new DeleteRestaurantCommand(id));
