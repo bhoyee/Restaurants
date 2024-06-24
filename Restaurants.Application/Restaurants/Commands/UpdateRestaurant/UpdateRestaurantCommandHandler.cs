@@ -13,9 +13,9 @@ namespace Restaurants.Application.Restaurants.Commands.UpdateRestaurant
 {
     public class UpdateRestaurantCommandHandler(ILogger<UpdateRestaurantCommandHandler> logger,
         IMapper mapper,
-        IRestaurantsRepository restaurantsRepository) : IRequestHandler<UpdateRestaurantCommand, bool>
+        IRestaurantsRepository restaurantsRepository) : IRequestHandler<UpdateRestaurantCommand>
     {
-        public async Task<bool> Handle(UpdateRestaurantCommand request, CancellationToken cancellationToken)
+        public async Task Handle(UpdateRestaurantCommand request, CancellationToken cancellationToken)
         {
             logger.LogInformation("Updating restaurant with id: {Restaurant} with {@UpdatedRestaurant}", request.Id, request);
 
@@ -33,7 +33,7 @@ namespace Restaurants.Application.Restaurants.Commands.UpdateRestaurant
 
             logger.LogInformation($"Restaurant with id {request.Id} successfully updated.");
 
-            return true;
+           
         }
     }
 }

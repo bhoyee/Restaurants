@@ -14,15 +14,15 @@ namespace Restaurants.Application.Restaurants.Queries.GetRestaurantById
 {
     public class GetRestaurantByIdQueryHandler(ILogger<GetRestaurantByIdQueryHandler> logger,
         IMapper mapper,
-        IRestaurantsRepository restaurantsRepository) : IRequestHandler<GetRestaurantByIdQuery, RestaurantDto?>
+        IRestaurantsRepository restaurantsRepository) : IRequestHandler<GetRestaurantByIdQuery, RestaurantDto>
     {
-        public async Task<RestaurantDto?> Handle(GetRestaurantByIdQuery request, CancellationToken cancellationToken)
+        public async Task<RestaurantDto> Handle(GetRestaurantByIdQuery request, CancellationToken cancellationToken)
         {
             logger.LogInformation("Getting restaurant {Restaurants}", request.Id);
             var restaurant = await restaurantsRepository.GetByIdAsync(request.Id)
                     ?? throw new NotFoundExeception($"Restaurant with {request.Id} doesn't exist");
 
-            var restaurantDtos = mapper.Map<RestaurantDto?>(restaurant);
+            var restaurantDtos = mapper.Map<RestaurantDto>(restaurant);
 
             return restaurantDtos;
         }
