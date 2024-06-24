@@ -30,8 +30,13 @@ await seeder.Seed();
 // Configure the HTTP request pipeline.
 app.UseSerilogRequestLogging();
 
-app.UseSwagger();
-app.UseSwaggerUI();
+//hiding  the api documentation in production env 
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
 
 app.UseHttpsRedirection();
 
