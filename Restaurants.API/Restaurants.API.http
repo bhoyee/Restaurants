@@ -6,7 +6,7 @@ GET {{HostAddress}}/api/restaurants
 
 ###
 
-GET {{HostAddress}}/api/restaurants/1
+GET {{HostAddress}}/api/restaurants/1007
 
 ###
 
@@ -44,14 +44,14 @@ Content-Type: application/json
 
 ###
 
-POST {{HostAddress}}/api/restaurants/3/dishes
+POST {{HostAddress}}/api/restaurants/1007/dishes
 Content-Type: application/json
 
 {
-  "Name": "Spagghetti Bolognese",
-  "Description": "Classic Italian pasta dish with rich meat sauce",
-  "Price": 23,
-  "KiloCalories": 234
+  "Name": "Amala and Ewedu",
+  "Description": "Classic Yoruba dish with rich meat and local fish sauce",
+  "Price": 53,
+  "KiloCalories": 134
   
 }
 

@@ -71,8 +71,7 @@ namespace Restaurants.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateRestaurant([FromBody]CreateRestaurantCommand command)
         {
-
-  
+      
                 int id = await mediator.Send(command);
                 return CreatedAtAction(nameof(GetById), new { id }, null);
  

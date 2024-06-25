@@ -9,6 +9,8 @@ namespace Restaurants.Domain.Repositories
 {
     public interface IDishesRepository
     {
+        Task<Dish> GetByNameAndRestaurantIdAsync(string name, int restaurantId);
+
         Task<int> Create(Dish entity);
     }
 }
